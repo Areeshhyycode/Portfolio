@@ -175,6 +175,27 @@ export const experience = [
 
 export const projects = [
   {
+    title: "Cold Mail Bot",
+    subtitle: "AI cold-email outreach + lead finder with auto follow-ups",
+    description:
+      "An end-to-end cold outreach engine: scrape business leads with Playwright, extract emails from their websites, generate fully personalized pitches with the Groq LLM API, then auto-send and sequence follow-ups over SMTP — all on free tiers. Models each lead as a finite-state machine (new → ready → sent → follow-up → replied) in MongoDB, enforces daily send caps to protect deliverability, and runs unattended on cron via GitHub Actions (9AM sends, 2PM follow-ups). Ships a Next.js dashboard for open tracking and unsubscribes. Built deliverability- and compliance-first (SPF/DKIM/DMARC, opt-out in every message, CAN-SPAM/GDPR).",
+    tech: [
+      "Node.js",
+      "MongoDB",
+      "Mongoose",
+      "Groq AI",
+      "Playwright",
+      "Nodemailer",
+      "SMTP",
+      "Next.js",
+      "node-cron",
+      "GitHub Actions",
+    ],
+    liveUrl: "https://cold-mail-bot.vercel.app",
+    githubUrl: "https://github.com/Areeshhyycode",
+    featured: true,
+  },
+  {
     title: "WhatsApp AI Bot Builder",
     subtitle: "Multi-tenant SaaS with RAG-powered chatbots",
     description:

@@ -32,9 +32,51 @@ body {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
+
+  /* Subtle dot grid background */
+  .bg-dot-grid {
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(0, 0, 0, 0.08) 1px,
+      transparent 0
+    );
+    background-size: 28px 28px;
+  }
+
+  /* Animated gradient text accent */
+  .text-gradient {
+    background: linear-gradient(110deg, #6366f1, #8b5cf6, #ec4899, #6366f1);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 6s linear infinite;
+  }
+
+  @keyframes shimmer {
+    to {
+      background-position: 200% center;
+    }
+  }
 }
 
 ::selection {
   background: #0a0a0a;
   color: #ffffff;
+}
+
+/* Soft custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4d4d4;
+  border-radius: 9999px;
+  border: 3px solid #ffffff;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a3a3a3;
 }

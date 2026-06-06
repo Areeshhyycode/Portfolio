@@ -6,8 +6,25 @@ import { personal } from "@/lib/data";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center pt-24 pb-16">
-      <div className="container-narrow w-full">
+    <section className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+      {/* Background layers */}
+      <div className="pointer-events-none absolute inset-0 bg-dot-grid [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_60%,transparent_100%)]" />
+      <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-[500px] w-[800px] rounded-full bg-gradient-to-tr from-indigo-200/40 via-violet-200/30 to-pink-200/30 blur-3xl" />
+
+      <div className="container-narrow w-full relative">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white/70 backdrop-blur px-4 py-1.5 text-sm text-neutral-600 mb-8 shadow-sm"
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+          </span>
+          {personal.availability}
+        </motion.div>
+
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -16,7 +33,7 @@ export default function Hero() {
         >
           Full Stack Developer.
           <br />
-          <span className="text-neutral-400">AI Integration Specialist.</span>
+          <span className="text-gradient">AI Integration Specialist.</span>
         </motion.h1>
 
         <motion.p
@@ -39,7 +56,7 @@ export default function Hero() {
         >
           <a
             href="#projects"
-            className="group inline-flex items-center gap-2 bg-neutral-900 text-white px-6 py-3 rounded-full hover:bg-neutral-700 transition-colors"
+            className="group inline-flex items-center gap-2 bg-neutral-900 text-white px-6 py-3 rounded-full hover:bg-neutral-700 transition-all shadow-lg shadow-neutral-900/10 hover:shadow-xl hover:shadow-neutral-900/20 hover:-translate-y-0.5"
           >
             See my work
             <ArrowRight
@@ -49,7 +66,7 @@ export default function Hero() {
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 border border-neutral-300 px-6 py-3 rounded-full hover:border-neutral-900 transition-colors"
+            className="inline-flex items-center gap-2 border border-neutral-300 bg-white/60 backdrop-blur px-6 py-3 rounded-full hover:border-neutral-900 hover:-translate-y-0.5 transition-all"
           >
             Get in touch
           </a>

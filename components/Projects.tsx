@@ -31,8 +31,10 @@ export default function Projects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="group border border-neutral-200 rounded-3xl p-8 md:p-10 hover:border-neutral-900 transition-all hover:shadow-lg"
+                className="group relative border border-neutral-200 rounded-3xl p-8 md:p-10 hover:border-neutral-300 transition-all hover:shadow-xl hover:shadow-neutral-900/5 hover:-translate-y-1 overflow-hidden"
               >
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-indigo-50/0 via-transparent to-violet-50/0 opacity-0 group-hover:opacity-100 group-hover:from-indigo-50/60 group-hover:to-violet-50/40 transition-opacity duration-500" />
+                <div className="relative">
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
                   <div className="flex-1">
                     <div className="flex flex-wrap items-baseline gap-3 mb-2">
@@ -89,9 +91,10 @@ export default function Projects() {
                     </div>
                   </div>
 
-                  <div className="hidden md:block text-6xl font-mono text-neutral-200 group-hover:text-neutral-900 transition-colors">
+                  <div className="hidden md:block text-6xl font-mono text-neutral-200 group-hover:text-gradient transition-colors">
                     0{idx + 1}
                   </div>
+                </div>
                 </div>
               </motion.article>
             );
