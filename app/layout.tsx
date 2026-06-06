@@ -16,7 +16,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Areesha Rafiq — MERN Stack & AI Developer",
   description:
-    "Self-taught full-stack developer building AI-powered platforms with the MERN stack, Next.js, and React Native. Open to remote work.",
+    "Self-taught full-stack developer building AI-powered platforms with the MERN stack, Next.js, and React Native.",
   keywords: [
     "Areesha Rafiq",
     "MERN Stack Developer",
