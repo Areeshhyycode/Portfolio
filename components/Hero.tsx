@@ -20,7 +20,7 @@ export default function Hero() {
         >
           Full Stack Developer.
           <br />
-          <span className="text-gradient">AI Integration Specialist.</span>
+          {/* <span className="text-gradient">AI Integration Specialist.</span> */}
         </motion.h1>
 
         <motion.p
@@ -29,10 +29,9 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-8 text-lg sm:text-xl text-neutral-600 max-w-2xl leading-relaxed"
         >
-          Hi, I&apos;m {personal.name.split(" ")[0]} I build AI-powered web
-          and mobile apps with the MERN stack, Next.js, and React Native.
-          Currently at{" "}
-          <span className="text-neutral-900 font-medium">Zero Vertical Labs</span>.
+          Hi, I&apos;m {personal.name.split(" ")[0]} I build AI-powered web and mobile applications using the MERN stack, Next.js, and React Native, focusing on creating fast, scalable, and user-friendly experiences. Currently at…
+{" "}
+          <span className="text-neutral-900 font-medium">Nexal it services</span>.
         </motion.p>
 
         <motion.div

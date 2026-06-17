@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:portfolio-szj4.vercel.app)",
+      "Bash(npm run *)",
+      "Bash(echo \"EXIT=$?\")",
+      "Bash(rm -f build_out.txt build_err.txt)",
+      "PowerShell(npx next build > build.log 2>&1; \"EXIT=$LASTEXITCODE\")",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
+    ]
+  }
+}
