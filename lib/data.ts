@@ -8,7 +8,7 @@ export const personal = {
   github: "https://github.com/Areeshhyycode",
   linkedin: "https://linkedin.com/in/areesha-rafiq-net",
   resumeUrl: "/Areesha_Rafiq_CV.pdf",
-  // availability: "Open to remote work",
+  availability: "",
 };
 
 export const about = {

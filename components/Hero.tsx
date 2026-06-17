@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, MapPin } from "lucide-react";
 import { personal } from "@/lib/data";
-
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
