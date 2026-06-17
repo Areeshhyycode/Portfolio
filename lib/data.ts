@@ -12,16 +12,21 @@ export const personal = {
 
 export const about = {
   summary:
-    "I'm a full-stack developer with a year of focused, hands-on experience shipping real products — from AI-powered web apps to React Native mobile apps live on the App Store and Play Store. I specialize in building AI-driven platforms using the MERN stack, Next.js, and modern LLMs like Groq AI, OpenAI, and LLaMA 3.3 70B. Currently working as a Junior Software Engineer at Nexal IT Services.",
+    "Full-Stack Developer with 1 year of hands-on experience designing, developing, and deploying real-world web and mobile applications, including AI-powered platforms and React Native apps. Skilled in the MERN stack and Next.js, with experience building scalable, user-focused solutions. Currently expanding expertise in AI automation and NestJS. Working as a Junior Software Engineer at Nexal IT Services.",
+  // highlights: [
+  //   "React Native apps shipped live to App Store & Play Store",
+  //   "AI integrations with Groq AI, OpenAI APIs, and LLaMA 3.3 70B",
+  //   "Comfortable with async, remote, cross-timezone collaboration",
+  //   "End-to-end ownership — from API design to deployment",
+  // ],
+
   highlights: [
-    "React Native apps shipped live to App Store & Play Store",
-    "AI integrations with Groq AI, OpenAI APIs, and LLaMA 3.3 70B",
-    "Comfortable with async, remote, cross-timezone collaboration",
-    "End-to-end ownership — from API design to deployment",
-  ],
+  "Worked on React Native, Expo, and Android app development",
+  "Built AI automation projects using Groq AI",
+],
   stats: [
     { value: "1+", label: "Year of hands-on experience" },
-    { value: "7", label: "AI-powered platforms shipped" },
+    { value: "7", label: "AI-powered platforms" },
     { value: "20+", label: "Technologies in my stack" },
     { value: "4", label: "Companies + freelance clients" },
   ],
@@ -161,7 +166,7 @@ export const experience = [
     role: "React Native Developer",
     company: "Zero Vertical Labs",
     location: "Karachi",
-    period: "Sep 2025 — Mar 2026",
+    period: "Sep 2025 — June 2026",
     bullets: [
       "Built responsive mobile interfaces with React Native and integrated APIs for seamless frontend–backend communication.",
       "Developed scalable backend services using Node.js and MongoDB across the MERN stack.",
