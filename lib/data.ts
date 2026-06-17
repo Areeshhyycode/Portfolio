@@ -8,11 +8,12 @@ export const personal = {
   github: "https://github.com/Areeshhyycode",
   linkedin: "https://linkedin.com/in/areesha-rafiq-net",
   resumeUrl: "/Areesha_Rafiq_CV.pdf",
+  // availability: "Open to remote work",
 };
 
 export const about = {
   summary:
-    "I'm a full-stack developer with a year of focused, hands-on experience shipping real products — from AI-powered web apps to React Native mobile apps live on the App Store and Play Store. I specialize in building AI-driven platforms using the MERN stack, Next.js, and modern LLMs like Groq AI, OpenAI, and LLaMA 3.3 70B. Currently working as a Junior Software Engineer at Nexal IT Services.",
+    "I'm a full-stack developer with a year of focused, hands-on experience shipping real products — from AI-powered web apps to React Native mobile apps live on the App Store and Play Store. I specialize in building AI-driven platforms using the MERN stack, Next.js, and modern LLMs like Groq AI, OpenAI, and LLaMA 3.3 70B. Currently working as a Junior MERN Stack Developer at Zero Vertical Labs.",
   highlights: [
   "Worked on React Native, Expo, and Android app development",
   "Built AI automation projects using Groq AI",
@@ -21,7 +22,7 @@ export const about = {
     { value: "1+", label: "Year of hands-on experience" },
     { value: "7", label: "AI-powered platforms" },
     { value: "20+", label: "Technologies in my stack" },
-    { value: "4", label: "Companies + freelance clients" },
+    { value: "3", label: "Companies + freelance clients" },
   ],
 };
 
@@ -131,53 +132,41 @@ export const skills = [
 
 export const experience = [
   {
-    role: "Junior Software Engineer",
-    company: "Nexal IT Services",
-    location: "Karachi (Onsite)",
-    period: "Jun 2026 — Present",
+    role: "Junior MERN Stack Developer",
+    company: "Zero Vertical Labs",
+    location: "Onsite",
+    period: "Nov 2025 — Present",
     bullets: [
-      "Developing responsive web applications using React.js, Next.js, and JavaScript.",
-      "Building and integrating REST APIs with Node.js and Express.js.",
-      "Working with MongoDB and modeling data for scalable application features.",
-      "Debugging, testing, and optimizing application performance.",
-      "Collaborating with the team to deliver scalable, user-friendly solutions and apply industry best practices.",
+      "Delivered WordPress websites for live clients including Baitulmaal and Bowtie — theme customization, plugin integration, and client-specific feature delivery.",
+      "Contributed to React Native mobile apps published on the App Store and Play Store, working on UI screens and API integration.",
+      "Built dynamic UIs in React and Next.js using hooks, Context API, and Redux Toolkit for multiple web applications.",
+      "Developed REST APIs with Node.js and Express, integrated with MongoDB and third-party services.",
+      "Worked on a ClickUp-style project management tool with task boards and team collaboration features.",
+      "Built an AI automation project using OpenAI APIs for smart workflows and content generation.",
+      "Integrated Firebase for auth, push notifications, and real-time data across mobile and web projects.",
     ],
   },
   {
-    role: "Appointment Scheduler & Client Coordination",
+    role: "Client Operations & Communication",
     company: "HQ 360",
     location: "Remote",
-    period: "May 2026 — Jun 2026",
+    period: "May 2026 — Present",
     bullets: [
-      "Coordinated client meetings and lead follow-ups across multiple time zones in a fully remote, async-first environment.",
-      "Assisted with recruitment, candidate communication, and onboarding workflows.",
-      "Ensured smooth coordination between departments and supported team productivity through effective scheduling.",
+      "Coordinate client meetings and lead follow-ups across multiple time zones in a fully remote, async-first environment.",
+      "Manage cross-team communication and onboarding workflows for clients and new team members.",
       "Built strong written and verbal client-handling skills — directly transferable to remote freelance collaboration.",
     ],
   },
   {
-    role: "React Native Developer",
-    company: "Zero Vertical Labs",
-    location: "Karachi",
-    period: "Sep 2025 — Mar 2026",
-    bullets: [
-      "Built responsive mobile interfaces with React Native and integrated APIs for seamless frontend–backend communication.",
-      "Developed scalable backend services using Node.js and MongoDB across the MERN stack.",
-      "Worked with Java (Spring Boot) on web and mobile application features.",
-      "Debugged and tested applications to improve performance and code quality.",
-      "Collaborated with the team to deliver optimized, maintainable solutions.",
-    ],
-  },
-  {
-    role: "Full-Stack Developer Intern",
+    role: "MERN Stack Developer Intern",
     company: "Lokhandwala Web Solutions",
     location: "Remote",
-    period: "Sep 2025 — Nov 2025",
+    period: "Aug 2025 — Oct 2025",
     bullets: [
-      "Gained hands-on full-stack experience building backend logic and APIs with ASP.NET.",
-      "Built responsive, interactive UIs with React.js.",
-      "Used Java for object-oriented programming and backend integration.",
-      "Strengthened practical understanding of building real-world applications front to back.",
+      "Built 6+ RESTful API endpoints in Node.js and Express with JWT-based authentication.",
+      "Improved React Native app performance via lazy loading and bundle-size reduction.",
+      "Wrote unit tests with Jest and React Testing Library, catching bugs before production.",
+      "Documented APIs and components in Notion for team reuse.",
     ],
   },
 ];
