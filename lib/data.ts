@@ -130,12 +130,26 @@ export const skills = [
   },
 ];
 
-export const experience = [
+export const experience = [{
+  role: "Full Stack Developer",
+  company: "Nexal IT Services",
+  location: "Onsite",
+  period: "june 2026 — Present",
+  bullets: [
+    "Developed and maintained scalable web applications using MERN Stack, Next.js, NestJS, Angular, and WordPress.",
+    "Built responsive and high-performance UIs using React, Next.js, and Angular with a focus on UX and performance optimization.",
+    "Designed and implemented RESTful APIs using Node.js, Express, and NestJS.",
+    "Worked with MongoDB for schema design, aggregation pipelines, and query optimization.",
+    "Integrated third-party APIs, authentication systems, and payment gateways into production applications.",
+    "Customized WordPress themes and plugins for client-specific requirements.",
+    "Collaborated with cross-functional teams following best practices in Git, testing, and deployment workflows."
+  ],
+},
   {
     role: "Junior MERN Stack Developer",
     company: "Zero Vertical Labs",
     location: "Onsite",
-    period: "Nov 2025 — Present",
+    period: "sep 2025 — june",
     bullets: [
       "Delivered WordPress websites for live clients including Baitulmaal and Bowtie — theme customization, plugin integration, and client-specific feature delivery.",
       "Contributed to React Native mobile apps published on the App Store and Play Store, working on UI screens and API integration.",
@@ -150,7 +164,7 @@ export const experience = [
     role: "Client Operations & Communication",
     company: "HQ 360",
     location: "Remote",
-    period: "May 2026 — Present",
+    period: "May 2026 — june",
     bullets: [
       "Coordinate client meetings and lead follow-ups across multiple time zones in a fully remote, async-first environment.",
       "Manage cross-team communication and onboarding workflows for clients and new team members.",
@@ -163,7 +177,7 @@ export const experience = [
     location: "Remote",
     period: "Aug 2025 — Oct 2025",
     bullets: [
-      "Built 6+ RESTful API endpoints in Node.js and Express with JWT-based authentication.",
+      "Built RESTful API endpoints in Node.js and Express with JWT-based authentication.",
       "Improved React Native app performance via lazy loading and bundle-size reduction.",
       "Wrote unit tests with Jest and React Testing Library, catching bugs before production.",
       "Documented APIs and components in Notion for team reuse.",
