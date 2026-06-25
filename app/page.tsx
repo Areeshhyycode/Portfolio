@@ -6,8 +6,11 @@ import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import { getProjects } from "@/lib/github";
 
-export default function Home() {
+export default async function Home() {
+  const projects = await getProjects();
+
   return (
     <main className="bg-white text-neutral-900">
       <Navbar />
@@ -15,7 +18,7 @@ export default function Home() {
       <About />
       <Skills />
       <Experience />
-      <Projects />
+      <Projects projects={projects} />
       <Contact />
       <Footer />
     </main>

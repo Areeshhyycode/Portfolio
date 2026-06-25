@@ -185,7 +185,20 @@ export const experience = [{
   },
 ];
 
-export const projects = [
+export type Project = {
+  title: string;
+  subtitle: string;
+  description: string;
+  tech: string[];
+  liveUrl?: string;
+  githubUrl: string;
+  featured?: boolean;
+  inProgress?: boolean;
+  /** true when sourced automatically from the GitHub API */
+  auto?: boolean;
+};
+
+export const projects: Project[] = [
   {
     title: "AIHireX",
     subtitle: "AI-powered job portal — AI does the boring half of hiring",

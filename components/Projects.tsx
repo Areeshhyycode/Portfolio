@@ -3,10 +3,14 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { GithubIcon } from "./BrandIcons";
-import { projects } from "@/lib/data";
+import { projects as defaultProjects, type Project } from "@/lib/data";
 import SectionHeading from "./SectionHeading";
 
-export default function Projects() {
+export default function Projects({
+  projects = defaultProjects,
+}: {
+  projects?: Project[];
+}) {
   return (
     <section
       id="projects"
@@ -22,6 +26,7 @@ export default function Projects() {
         <div className="space-y-6">
           {projects.map((project, idx) => {
             const inProgress = "inProgress" in project && project.inProgress;
+            const auto = "auto" in project && project.auto;
             const liveUrl = "liveUrl" in project ? project.liveUrl : undefined;
 
             return (
@@ -48,6 +53,12 @@ export default function Projects() {
                         <span className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider px-2.5 py-1 bg-amber-50 text-amber-700 border border-amber-200 rounded-full">
                           <span className="h-1.5 w-1.5 rounded-full bg-amber-500 animate-pulse" />
                           In Development
+                        </span>
+                      )}
+                      {auto && (
+                        <span className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider px-2.5 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full">
+                          <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                          Auto-synced
                         </span>
                       )}
                     </div>
