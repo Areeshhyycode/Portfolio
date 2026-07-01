@@ -188,6 +188,7 @@ export const experience = [{
 export const projects = [
   {
     title: "AIHireX",
+    categories: ["Next.js"],
     subtitle: "AI-powered job portal — AI does the boring half of hiring",
     description:
       "A three-sided SaaS job platform (Indeed × LinkedIn style) where LLMs run the entire hiring loop as the core engine — not a chatbot bolt-on. Ships 15+ AI flows: ATS resume analysis + one-click enhancement, AI-generated resumes, resume authenticity checks, vector-based semantic job matching (Hugging Face MiniLM + Pinecone), adaptive voice mock interviews (ElevenLabs TTS), AI scam detection that auto-screens every recruiter post before publishing, AI job-description drafting, and a verified-recruiter system with AI + admin review. Backed by 50+ API endpoints, role-based Clerk auth (Google OAuth), background async Pinecone indexing on publish, and verification gating enforced in the API layer — all in strict TypeScript across 60+ composable components.",
@@ -210,6 +211,7 @@ export const projects = [
   },
   {
     title: "InterviewPrep AI",
+    categories: ["Next.js"],
     subtitle: "Voice-based AI mock interviewer with a readiness report",
     description:
       "An AI mock-interview platform that simulates a real technical interview by voice. Upload a CV and paste a job description — the AI extracts your skills, matches them to the role, finds skill gaps, then generates tailored MERN/React/Node/Next.js questions at easy/medium/hard difficulty. It speaks each question aloud and listens to your spoken answer; in 'teacher mode' it explains the correct answer with an example when you're wrong. Ends with a final report: technical, communication, and confidence scores plus weak topics and an overall readiness percentage. Built on strict-JSON prompt engineering across four distinct AI tasks (question gen, evaluation, teacher mode, report synthesis), with graceful voice fallbacks when API quota runs out.",
@@ -230,6 +232,7 @@ export const projects = [
   },
   {
     title: "AI Workfolio Builder",
+    categories: ["Next.js"],
     subtitle: "Turn raw skills into a portfolio, resume & LinkedIn — in one shot",
     description:
       "A career-asset generator: enter your skills, experience, and projects, and the AI produces four things at once — a complete self-contained portfolio website (live preview + download), recruiter-ready project descriptions, an ATS-friendly Markdown resume, and a first-person LinkedIn 'About' summary. A single server-side prompt requests all four assets as JSON, which is defensively parsed into typed assets. Users pick their LLM provider (Groq LLaMA 3.3 70B or Google Gemini) from the UI. Security-first: API keys are read only server-side and never reach the browser, and the generated portfolio renders inside a sandboxed iframe so its scripts never execute.",
@@ -249,6 +252,7 @@ export const projects = [
   },
   {
     title: "Cold Mail Bot",
+    categories: ["Bot"],
     subtitle: "Autonomous job-application & lead-gen outreach engine",
     description:
       "A fully autonomous outreach engine that finds opportunities, writes personalized emails, and sends them on a schedule with zero manual work. A hybrid intent-detection + 0–100 lead-scoring engine classifies every lead and routes it: JOB mode finds developer roles and Karachi software houses and writes tailored applications with CV + portfolio links, while SERVICE mode finds businesses needing web/SEO work and sends agency-style pitches. Sources leads from Hacker News 'Who is Hiring', RemoteOK, Remotive, and WeWorkRemotely APIs plus Google Maps (Playwright). Every email is written individually by Groq (no templates). Runs serverless on GitHub Actions cron (5×/day) with MongoDB partial-unique de-duplication, free MX-lookup email verification over Cloudflare DoH, IMAP reply/bounce detection with automated follow-ups, and an open-tracking pixel + one-click unsubscribe (CAN-SPAM compliant).",
@@ -264,12 +268,12 @@ export const projects = [
       "ImapFlow",
       "GitHub Actions",
     ],
-    liveUrl: "https://cold-mail-bot.vercel.app",
     githubUrl: "https://github.com/Areeshhyycode/cold-mail-bot",
     featured: true,
   },
   {
     title: "WhatsApp AI Bot Builder",
+    categories: ["Next.js"],
     subtitle: "Multi-tenant SaaS with RAG-powered chatbots",
     description:
       "A SaaS where users sign up, upload a PDF/text document, and get a WhatsApp chatbot that answers messages from that content. Built with end-to-end RAG: documents are chunked, embedded via Google text-embedding-004, stored in MongoDB Atlas Vector Search, and queried at chat-time to ground Groq LLM responses. Supports both whatsapp-web.js (QR-code linking) and the official WhatsApp Cloud API webhook for production.",
@@ -290,6 +294,7 @@ export const projects = [
   },
   {
     title: "AI Meeting Automation",
+    categories: ["Next.js"],
     subtitle: "Transcribe, summarize, and auto-draft follow-ups",
     description:
       "Upload a meeting recording (mp3 / mp4 / wav / webm) or paste a Loom link — get a full transcript, structured summary, extracted action items with assignees and deadlines, plus an auto-drafted follow-up email ready to send via Resend. Pipeline uses Groq Whisper for fast transcription, OpenAI gpt-4o-mini for Zod-validated structured analysis, and MongoDB for persistence. Includes a live dashboard with meeting history and per-meeting detail pages.",
@@ -310,6 +315,7 @@ export const projects = [
   },
   {
     title: "AI Customer Support Agent",
+    categories: ["Next.js"],
     subtitle: "E-commerce store with RAG-powered AI support + admin dashboard",
     description:
       "A full-stack e-commerce store (Acme Leather Co.) with a built-in AI customer support agent. Customers shop while the AI answers questions from the company's own knowledge base using RAG — when it's not confident, it automatically creates a support ticket and hands off to a human. Features dual-role auth (customer & admin), document upload (PDF/TXT/MD), MongoDB Vector Search with optional Pinecone, conversation memory, and a protected admin dashboard for managing knowledge base and tickets.",
@@ -330,7 +336,50 @@ export const projects = [
     featured: true,
   },
   {
+    title: "ZeeFrames",
+    categories: ["MERN"],
+    subtitle: "Full-stack store with ZeeBot — an admin-trained RAG support bot",
+    description:
+      "A full-stack app (React + Vite client, Express + MongoDB server) with ZeeBot, an AI assistant that answers strictly from an admin-managed knowledge base. Admins upload PDF / TXT / MD documents into the knowledge base; ZeeBot retrieves the most relevant passages and grounds its answers in them, offering a human handoff when it can't find a confident match (Groq LLaMA 3.3 70B when configured, best-match passage otherwise). Ships full JWT auth with bcrypt-hashed passwords, dual customer/admin roles, a gated /chat page, and an admin-only dashboard for managing the knowledge base — with requireAuth / requireAdmin middleware enforced across a REST API and ProtectedRoute guards on the client.",
+    tech: [
+      "React",
+      "Vite",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Mongoose",
+      "JWT + bcrypt",
+      "Groq",
+      "LLaMA 3.3 70B",
+      "RAG",
+      "Tailwind CSS",
+    ],
+    liveUrl: "https://zeeframes-com-o86b.vercel.app",
+    featured: true,
+  },
+  {
+    title: "Student Management System",
+    categories: ["PHP"],
+    subtitle: "Core PHP + MySQL CRUD app with auth, uploads, search & pagination",
+    description:
+      "A beginner-friendly, security-conscious student management system built in core PHP (no framework) with MySQL. Covers the full stack of fundamentals: register/login with password_hash, session-based route protection, full student CRUD, profile-picture uploads with type and size validation, search by name/email/course, and clean pagination for large lists. Hardened against common attacks with MySQLi prepared statements (SQL-injection safe) and htmlspecialchars output escaping (XSS safe), plus server-side validation on every form.",
+    tech: [
+      "PHP",
+      "MySQL",
+      "MySQLi (Prepared Statements)",
+      "Sessions",
+      "password_hash",
+      "HTML5",
+      "CSS3",
+    ],
+    demoUrl:
+      "https://www.linkedin.com/posts/areesha-rafiq-net_php-mysql-webdevelopment-ugcPost-7478074023768338432-XO3p",
+    demoLabel: "View demo",
+    featured: true,
+  },
+  {
     title: "InboxAI",
+    categories: ["Next.js"],
     subtitle: "AI inbox triage — Gmail + Groq + Notion + Slack",
     description:
       "An AI assistant that turns 50 unread emails into a 30-second triage. Fetches unread Gmail messages, categorizes each (Work/Personal/Urgent/Newsletter/Spam), scores urgency 1–10, detects sentiment, drafts polite context-aware replies, extracts action items as Notion tasks, and pings Slack the moment an urgent email lands. Background cron job processes the inbox every 10 minutes for unattended triage. Built with Google OAuth 2.0 (with refresh-token rotation), structured JSON output via Groq, and parallel email analysis via Promise.all.",
@@ -352,6 +401,7 @@ export const projects = [
   },
   {
     title: "ZVTalent",
+    categories: ["Next.js"],
     subtitle: "AI-Powered Hiring Platform",
     description:
       "An AI-driven recruitment platform that automatically reads resumes, scores candidates against job descriptions, and generates tailored interview questions — replacing hours of manual screening with seconds of analysis.",
@@ -362,6 +412,7 @@ export const projects = [
   },
   {
     title: "JobGenie AI",
+    categories: ["Next.js"],
     subtitle: "AI-Powered Job Application Tracker",
     description:
       "Full-stack web app that tracks job applications and uses AI to generate tailored cover letters, role-specific interview questions, follow-up emails, and a Match Score that analyzes how well a candidate's profile fits a job description.",
@@ -379,6 +430,7 @@ export const projects = [
   },
   {
     title: "Daily Vocab",
+    categories: ["Next.js"],
     subtitle: "Automated Vocabulary Builder",
     description:
       "A fully automated daily word generator using GitHub Actions, Groq AI, Node.js, and Next.js — auto-commits new content to GitHub and deploys to Vercel without manual intervention. End-to-end CI/CD pipeline running on cron.",
@@ -394,6 +446,8 @@ export const projects = [
     featured: true,
   },
 ];
+
+export const projectFilters = ["All", "Next.js", "MERN", "Bot", "PHP"] as const;
 
 export const navLinks = [
   { href: "#about", label: "About" },
