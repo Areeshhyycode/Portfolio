@@ -1,16 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useMemo, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { GithubIcon } from "./BrandIcons";
-import { projects as defaultProjects, type Project } from "@/lib/data";
+import { projects } from "@/lib/data";
 import SectionHeading from "./SectionHeading";
 
-export default function Projects({
-  projects = defaultProjects,
-}: {
-  projects?: Project[];
-}) {
+export default function Projects() {
   return (
     <section
       id="projects"
@@ -23,10 +20,42 @@ export default function Projects({
           description="A few projects I've built — focused on AI integration, real-world utility, and clean UX."
         />
 
+        {/* Filter tabs */}
+        <div className="flex flex-wrap gap-2 mb-10">
+          {projectFilters.map((f) => {
+            const active = filter === f;
+            const count =
+              f === "All"
+                ? projects.length
+                : projects.filter(
+                    (p) => "categories" in p && p.categories?.includes(f),
+                  ).length;
+            return (
+              <button
+                key={f}
+                onClick={() => setFilter(f)}
+                className={`inline-flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-full border transition-all ${
+                  active
+                    ? "bg-neutral-900 text-white border-neutral-900"
+                    : "bg-white text-neutral-600 border-neutral-200 hover:border-neutral-400 hover:text-neutral-900"
+                }`}
+              >
+                {f}
+                <span
+                  className={`text-xs font-mono ${
+                    active ? "text-neutral-400" : "text-neutral-400"
+                  }`}
+                >
+                  {count}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
         <div className="space-y-6">
           {projects.map((project, idx) => {
             const inProgress = "inProgress" in project && project.inProgress;
-            const auto = "auto" in project && project.auto;
             const liveUrl = "liveUrl" in project ? project.liveUrl : undefined;
 
             return (
@@ -55,61 +84,69 @@ export default function Projects({
                           In Development
                         </span>
                       )}
-                      {auto && (
-                        <span className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider px-2.5 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full">
-                          <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                          Auto-synced
-                        </span>
-                      )}
                     </div>
 
-                    <p className="text-neutral-700 leading-relaxed mb-6 max-w-2xl">
-                      {project.description}
-                    </p>
+                        <p className="text-neutral-700 leading-relaxed mb-6 max-w-2xl">
+                          {project.description}
+                        </p>
 
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {project.tech.map((t) => (
-                        <span
-                          key={t}
-                          className="text-xs font-mono px-2.5 py-1 bg-neutral-100 text-neutral-700 rounded-md"
-                        >
-                          {t}
-                        </span>
-                      ))}
-                    </div>
+                        <div className="flex flex-wrap gap-2 mb-6">
+                          {project.tech.map((t) => (
+                            <span
+                              key={t}
+                              className="text-xs font-mono px-2.5 py-1 bg-neutral-100 text-neutral-700 rounded-md"
+                            >
+                              {t}
+                            </span>
+                          ))}
+                        </div>
 
-                    <div className="flex items-center gap-4">
-                      {liveUrl && (
-                        <a
-                          href={liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-sm font-medium text-neutral-900 hover:gap-2.5 transition-all"
-                        >
-                          Live demo
-                          <ArrowUpRight size={16} />
-                        </a>
-                      )}
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm text-neutral-600 hover:text-neutral-900 transition-colors"
-                      >
-                        <GithubIcon size={14} />
-                        Source code
-                      </a>
+                        <div className="flex items-center gap-4">
+                          {liveUrl && (
+                            <a
+                              href={liveUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1.5 text-sm font-medium text-neutral-900 hover:gap-2.5 transition-all"
+                            >
+                              Live demo
+                              <ArrowUpRight size={16} />
+                            </a>
+                          )}
+                          {!liveUrl && demoUrl && (
+                            <a
+                              href={demoUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1.5 text-sm font-medium text-neutral-900 hover:gap-2.5 transition-all"
+                            >
+                              {demoLabel}
+                              <ArrowUpRight size={16} />
+                            </a>
+                          )}
+                          {githubUrl && (
+                            <a
+                              href={githubUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1.5 text-sm text-neutral-600 hover:text-neutral-900 transition-colors"
+                            >
+                              <GithubIcon size={14} />
+                              Source code
+                            </a>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="hidden md:block text-6xl font-mono text-neutral-200 group-hover:text-gradient transition-colors">
+                        {String(idx + 1).padStart(2, "0")}
+                      </div>
                     </div>
                   </div>
-
-                  <div className="hidden md:block text-6xl font-mono text-neutral-200 group-hover:text-gradient transition-colors">
-                    0{idx + 1}
-                  </div>
-                </div>
-                </div>
-              </motion.article>
-            );
-          })}
+                </motion.article>
+              );
+            })}
+          </AnimatePresence>
         </div>
       </div>
     </section>
