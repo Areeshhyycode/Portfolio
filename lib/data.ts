@@ -1,14 +1,20 @@
-export const personal = {
-  name: "Areesha Rafiq",
-  title: "MERN Stack & AI Developer",
-  tagline: "Building AI-powered web & mobile apps with the MERN stack.",
-  location: "Karachi, Pakistan",
-  email: "areeshazv@gmail.com",
-  phone: "+92 322 3007388",
-  github: "https://github.com/Areeshhyycode",
-  linkedin: "https://linkedin.com/in/areesha-rafiq-net",
-  resumeUrl: "/Areesha_Rafiq_CV.pdf",
-  availability: "",
+export type Project = {
+  title: string;
+  subtitle: string;
+  description: string;
+  tech: string[];
+
+  categories: string[];
+
+  liveUrl?: string;
+  demoUrl?: string;
+  demoLabel?: string;
+
+  githubUrl?: string;
+
+  featured?: boolean;
+  inProgress?: boolean;
+  auto?: boolean;
 };
 
 export const about = {
@@ -185,18 +191,6 @@ export const experience = [{
   },
 ];
 
-export type Project = {
-  title: string;
-  subtitle: string;
-  description: string;
-  tech: string[];
-  liveUrl?: string;
-  githubUrl: string;
-  featured?: boolean;
-  inProgress?: boolean;
-  /** true when sourced automatically from the GitHub API */
-  auto?: boolean;
-};
 
 export const projects: Project[] = [
   {
@@ -389,7 +383,55 @@ export const projects: Project[] = [
       "https://www.linkedin.com/posts/areesha-rafiq-net_php-mysql-webdevelopment-ugcPost-7478074023768338432-XO3p",
     demoLabel: "View demo",
     featured: true,
-  },
+  },{
+  title: "JobHive",
+  categories: ["PHP"],
+  subtitle: "Full-Stack Job Portal (Mini Indeed)",
+  description:
+    "A complete job marketplace built from scratch using PHP 8 and MySQL. Supports three user roles: Job Seekers, Companies, and Admin. Job seekers can create profiles, upload resumes, search and filter jobs, save listings, and apply with one click. Companies manage job postings and shortlist applicants, while admins moderate users and approve job posts. Built with secure authentication, CSRF protection, role-based authorization, SQL JOINs, pagination, file uploads, and email notifications.",
+  tech: [
+    "PHP 8",
+    "MySQL",
+    "MySQLi",
+    "Sessions",
+    "CSRF Protection",
+    "bcrypt",
+    "SQL JOINs",
+    "Pagination",
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+  ],
+  demoUrl:
+    "https://www.linkedin.com/posts/areesha-rafiq-net_php-mysql-webdevelopment-activity-7478591295117242368-O1mE",
+  demoLabel: "View Demo",
+  githubUrl: "https://github.com/Areeshhyycode/JobHive",
+  featured: true,
+},
+{
+  title: "Hospital Management System",
+  categories: ["PHP"],
+  subtitle: "Complete Hospital ERP with Scheduling & Billing",
+  description:
+    "A full Hospital Management System built using core PHP and MySQL without frameworks. Features doctor and department management, patient registration, appointment scheduling with double-booking prevention, prescription management, billing and invoice generation, and an analytics dashboard. Designed with a normalized relational database, foreign keys, prepared statements, CSRF protection, bcrypt password hashing, and a responsive interface.",
+  tech: [
+    "PHP 8",
+    "MySQL",
+    "MySQLi",
+    "Prepared Statements",
+    "bcrypt",
+    "CSRF Protection",
+    "Relational Database Design",
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+  ],
+  demoUrl:
+    "https://www.linkedin.com/posts/areesha-rafiq-net_php-mysql-webdevelopment-activity-7478589490488315904-M2oR",
+  demoLabel: "View Demo",
+  githubUrl: "https://github.com/Areeshhyycode/Hospital-Management-System",
+  featured: true,
+},
   {
     title: "InboxAI",
     categories: ["Next.js"],
