@@ -4,10 +4,20 @@ import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { GithubIcon } from "./BrandIcons";
-import { projects, projectFilters } from "@/lib/data";
+import {
+  projects as manualProjects,
+  projectFilters,
+  type Project,
+} from "@/lib/data";
 import SectionHeading from "./SectionHeading";
 
-export default function Projects() {
+// Defaults to the curated list in data.ts. Pass `projects` to render an
+// augmented list instead (e.g. getProjects() from lib/github.ts).
+export default function Projects({
+  projects = manualProjects,
+}: {
+  projects?: Project[];
+}) {
   const [filter, setFilter] =
     useState<(typeof projectFilters)[number]>("All");
 
@@ -17,7 +27,7 @@ export default function Projects() {
     return projects.filter((project) =>
       project.categories.includes(filter)
     );
-  }, [filter]);
+  }, [filter, projects]);
 
   return (
     <section

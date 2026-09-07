@@ -124,6 +124,23 @@ async function fetchReadmeDescription(fullName: string): Promise<string> {
   }
 }
 
+/**
+ * Map a repo onto the site's project filter tabs (see projectFilters in data.ts).
+ * Returns an empty list when nothing matches — the card then shows only under "All".
+ */
+function categoriesFromRepo(repo: GithubRepo): string[] {
+  const haystack = [repo.name, repo.language ?? "", ...(repo.topics ?? [])]
+    .join(" ")
+    .toLowerCase();
+
+  const categories: string[] = [];
+  if (/next[.-]?js/.test(haystack)) categories.push("Next.js");
+  if (/\bmern\b|express|mongo/.test(haystack)) categories.push("MERN");
+  if (/\bbots?\b/.test(haystack)) categories.push("Bot");
+  if (/\bphp\b/.test(haystack)) categories.push("PHP");
+  return categories;
+}
+
 function repoToProject(repo: GithubRepo, description: string): Project {
   const topics = (repo.topics ?? []).filter((t) => t !== "portfolio");
   const tech = topics.length
@@ -138,6 +155,7 @@ function repoToProject(repo: GithubRepo, description: string): Project {
     description:
       description || repo.description?.trim() || "Auto-imported from GitHub.",
     tech,
+    categories: categoriesFromRepo(repo),
     liveUrl: repo.homepage!.trim(),
     githubUrl: repo.html_url,
     featured: true,

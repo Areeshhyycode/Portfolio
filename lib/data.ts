@@ -511,3 +511,17 @@ export const navLinks = [
   { href: "#projects", label: "Projects" },
   { href: "#contact", label: "Contact" },
 ];
+export const personal = {
+  name: "Areesha Rafiq",
+  role: "Mern Stack Developer",
+
+  availability: "Open to remote work",
+
+  github: "https://github.com/Areeshhyycode",
+
+  linkedin: "https://www.linkedin.com/in/areesha-rafiq-net/",
+
+  email: "areesharafiq.dev@gmail.com",
+
+  location: "Karachi, Pakistan",
+};
