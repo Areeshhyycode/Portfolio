@@ -365,6 +365,26 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    title: "Digital Evidence & Incident Tracker",
+    categories: ["Next.js"],
+    subtitle: "Database-first incident response tracker on PostgreSQL",
+    description:
+      "An incident-response tool where a security analyst logs a security incident — a suspicious login, phishing email, or malware alert — with a severity and investigation status, then attaches the digital evidence collected during the investigation: login logs, source IP addresses, screenshots, and SHA-256 file hashes. Built database-first: incidents to evidence is a one-to-many relationship enforced with a FOREIGN KEY and ON DELETE CASCADE, so evidence can't outlive its incident. The SQL is hand-written — CRUD, filtering, GROUP BY aggregates, and LEFT JOIN evidence counts that still include incidents with zero evidence — and reads are gated by Row Level Security policies so the browser-facing publishable key can only read.",
+    tech: [
+      "Next.js 16",
+      "TypeScript",
+      "PostgreSQL",
+      "Supabase",
+      "SQL",
+      "Row Level Security",
+      "Tailwind CSS",
+      "Vercel",
+    ],
+    liveUrl: "https://digital-evidence-incident-tracke.vercel.app",
+    githubUrl: "https://github.com/Areeshhyycode/Digital-Evidence-Incident-Tracke",
+    featured: true,
+  },
+  {
     title: "Student Management System",
     categories: ["PHP"],
     subtitle: "Core PHP + MySQL CRUD app with auth, uploads, search & pagination",
