@@ -194,6 +194,27 @@ export const experience = [{
 
 export const projects: Project[] = [
   {
+    title: "Recipe & Meal Planner",
+    categories: ["JavaScript"],
+    subtitle: "AI weekly meal planner with drag-and-drop and auto shopping list",
+    description:
+      "An AI meal planner that fills a whole week from a natural-language prompt — “high protein, no beef, quick weeknight meals” — then merges that week's ingredients into one de-duplicated shopping list. The LLM never returns recipe IDs (it would invent them): it returns dish names and search queries, and a fallback ladder — exact name → variant → broad term → ingredient filter — resolves each one against TheMealDB, so every slot holds a real, cookable recipe. Strict JSON schema output keeps response parsing from failing, the Groq key stays server-side behind a Vercel serverless proxy, and the 21 recipe lookups run in parallel via Promise.all while de-duplication stays serial so each pick can see the ones before it.",
+    tech: [
+      "Vanilla JavaScript (ES Modules)",
+      "HTML5",
+      "CSS3",
+      "Node.js",
+      "Express",
+      "Groq API",
+      "TheMealDB API",
+      "Vercel Serverless",
+      "localStorage",
+    ],
+    liveUrl: "https://meal-planner-tau-roan.vercel.app",
+    githubUrl: "https://github.com/Areeshhyycode/meal-planner",
+    featured: true,
+  },
+  {
     title: "AIHireX",
     categories: ["Next.js"],
     subtitle: "AI-powered job portal — AI does the boring half of hiring",
@@ -522,7 +543,14 @@ export const projects: Project[] = [
   },
 ];
 
-export const projectFilters = ["All", "Next.js", "MERN", "Bot", "PHP"] as const;
+export const projectFilters = [
+  "All",
+  "Next.js",
+  "MERN",
+  "JavaScript",
+  "Bot",
+  "PHP",
+] as const;
 
 export const navLinks = [
   { href: "#about", label: "About" },
